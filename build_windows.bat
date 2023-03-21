@@ -11,4 +11,5 @@ mkdir build
 conan profile detect
 conan install .
 cmake -B build -S . --preset x64-debug
+cmake --build .\build\
 echo Build completed!
