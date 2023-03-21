@@ -9,4 +9,6 @@ else
 fi
 mkdir build
 cd build
-cmake -G "Xcode" ..
+conan profile detect
+conan install ..
+cmake -B . -S .. -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="conan_provider.cmake" -DCMAKE_BUILD_TYPE=Debug -G "Xcode"
