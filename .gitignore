@@ -35,3 +35,4 @@ build
 .vs
 wix
 wix.zip
+**/.DS_Store
