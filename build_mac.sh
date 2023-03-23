@@ -12,6 +12,7 @@ cd build
 conan profile detect
 conan install ../
 cd ../
-cmake -B build -S . -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="conan_provider.cmake" -DCMAKE_BUILD_TYPE=Debug
+cmake -B build -S . -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="conan_provider.cmake" -DCMAKE_BUILD_TYPE=Debug -G "Xcode"
 cmake --build build --config Debug
+cmake --install build --config Debug
 echo "Build completed!"

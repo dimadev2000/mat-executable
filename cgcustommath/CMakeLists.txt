@@ -6,7 +6,10 @@ cmake_minimum_required (VERSION 3.8)
 project ("cgcustommath")
 
 find_package(Eigen3 CONFIG REQUIRED)
-
+if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  message(STATUS "Building for MacOS")
+  set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
+endif()
 # Add source to this project's executable.
 add_library (cgcustommath STATIC "cgcustommath.cpp")
 target_link_libraries(cgcustommath PUBLIC Eigen3::Eigen)
